@@ -1453,6 +1453,7 @@
             screenshotImages.forEach((img, index) => {
                 img.addEventListener('click', (e) => {
                     if (isDragging) return;
+                    if (window.innerWidth <= 600) return; // Skip modal on mobile
                     currentIndex = index;
                     modalImg.src = img.src;
                     modal.classList.add('active');
