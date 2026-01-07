@@ -64,10 +64,72 @@
             transition: transform 0.3s ease;
             user-select: none;
             -webkit-user-drag: none;
-            pointer-events: none;
+            cursor: pointer;
         }
         .homepage .screenshot-grid img:hover {
             transform: scale(1.05);
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 24px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #FF9633;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 150, 51, 0.2);
+            border: 1px solid #FF9633;
+            color: #FF9633;
+            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-nav:hover {
+            background: rgba(255, 150, 51, 0.4);
+        }
+        .modal-prev {
+            left: 20px;
+        }
+        .modal-next {
+            right: 20px;
         }
         .homepage .download {
             display: flex;
@@ -306,6 +368,16 @@
         <footer>
             <p>&copy; 2023 Analoglab Corp. All rights reserved.</p>
         </footer>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="modal">
+            <button class="modal-close">&times;</button>
+            <button class="modal-nav modal-prev">&#8249;</button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Screenshot">
+            </div>
+            <button class="modal-nav modal-next">&#8250;</button>
+        </div>
     </div>
 
     <!-- Policy/Terms Pages -->
@@ -1277,6 +1349,61 @@
             });
 
             slider.style.cursor = 'grab';
+
+            // Image modal functionality
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+            const prevBtn = document.querySelector('.modal-prev');
+            const nextBtn = document.querySelector('.modal-next');
+            const images = document.querySelectorAll('.screenshot-grid img');
+            let currentIndex = 0;
+            let isDragging = false;
+
+            // Track if user is dragging vs clicking
+            slider.addEventListener('mousedown', () => { isDragging = false; });
+            slider.addEventListener('mousemove', () => { isDragging = true; });
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', (e) => {
+                    if (isDragging) return;
+                    currentIndex = index;
+                    modalImg.src = img.src;
+                    modal.classList.add('active');
+                });
+            });
+
+            function showImage(index) {
+                if (index < 0) index = images.length - 1;
+                if (index >= images.length) index = 0;
+                currentIndex = index;
+                modalImg.src = images[currentIndex].src;
+            }
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            prevBtn.addEventListener('click', () => {
+                showImage(currentIndex - 1);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                showImage(currentIndex + 1);
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('active')) return;
+                if (e.key === 'Escape') modal.classList.remove('active');
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            });
         }
 
         function renderPolicyPage(page, lang) {
