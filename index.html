@@ -247,12 +247,31 @@
             .homepage .tagline {
                 font-size: 1.1rem;
             }
+            .homepage .screenshot-grid {
+                padding: 20px calc((100vw - 70vw) / 2);
+            }
             .homepage .screenshot-grid img {
-                width: 200px;
+                width: 70vw;
+                flex-shrink: 0;
             }
             .homepage .download {
                 flex-direction: column;
                 align-items: center;
+            }
+            /* Modal mobile styles */
+            .modal-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 20px;
+            }
+            .modal-prev {
+                left: 8px;
+            }
+            .modal-next {
+                right: 8px;
+            }
+            .modal-content img {
+                max-width: 85vw;
             }
         }
 
