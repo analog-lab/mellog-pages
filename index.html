@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>멜로그(mellog) 개인정보처리방침</title>
+    <title>mellog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -126,6 +126,16 @@
 <body>
     <div class="container">
         <img src="book-closed_gray.svg" alt="" class="page-icon">
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const pages = {
+            privacy: {
+                ko: {
+                    title: '멜로그(mellog) 개인정보처리방침',
+                    lang: 'ko',
+                    content: `
         <h1>멜로그(mellog) 개인정보처리방침</h1>
 
         <div class="section">
@@ -298,6 +308,207 @@
             <h2>부칙 (2025. 09. 01.)</h2>
             <p>본 개인정보 처리방침은 2026년 1월 20일부터 시행합니다.</p>
         </div>
-    </div>
+                    `
+                },
+                en: {
+                    title: 'mellog Privacy Policy',
+                    lang: 'en',
+                    content: `
+        <h1>mellog Privacy Policy</h1>
+
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>Analoglab Co., Ltd. establishes and discloses the following policy to protect the personal information of "mellog" service users and to promptly handle related grievances.</p>
+        </div>
+
+        <div class="section">
+            <h2>Article 1: Purpose of Processing Personal Information</h2>
+            <p>The company processes personal information for the following purposes:</p>
+            <ol>
+                <li>Membership registration and management (identity verification, age confirmation for users 14+, prevention of service misuse, etc.)</li>
+                <li>Provision of goods/services (delivery, basic/customized services, payment processing and settlement, etc.)</li>
+                <li>Complaint handling (identity verification, fact-finding, notification of processing results)</li>
+                <li>Marketing and advertising (customized advertisements, event information)</li>
+                <li>Service improvement and development</li>
+                <li>Pseudonymized information (statistical compilation, scientific research)</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Article 2: Personal Information Items Collected</h2>
+
+            <p><strong>Required Collection:</strong></p>
+            <ul>
+                <li>Login SNS identifiers (Apple, Google, Kakao, LINE)</li>
+                <li>Profile name</li>
+            </ul>
+
+            <p><strong>Optional Collection:</strong></p>
+            <ul>
+                <li>Date of birth</li>
+            </ul>
+
+            <p><strong>Automatic Collection:</strong></p>
+            <ul>
+                <li>Device information (model, OS), app settings, app push tokens, metadata (EXIF), service usage records, advertising identifier (IDFA)</li>
+            </ul>
+
+            <p><strong>User Input:</strong></p>
+            <ul>
+                <li>Log text, log images, cut messages, cut images</li>
+                <li class="note">* All content created by users is encrypted during storage.</li>
+            </ul>
+
+            <p><strong>Other:</strong></p>
+            <ul>
+                <li>Purchase details when using paid services</li>
+                <li>Additional items necessary for complaint resolution</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 3: Personal Information Processing and Retention Period</h2>
+
+            <p><strong>Deletion Upon Withdrawal:</strong></p>
+            <p>Collected information is deleted and destroyed without delay upon account deletion, without requiring a separate request.</p>
+
+            <p><strong>Exceptions to Retention:</strong></p>
+            <ul>
+                <li>Ongoing investigation for legal violations: Until completion of investigation</li>
+                <li>Remaining credit/debt relationship: Until settlement</li>
+                <li>Prevention of fraudulent re-registration: Login SNS identifier retained until service termination</li>
+            </ul>
+
+            <p><strong>Statutory Retention Periods:</strong></p>
+            <ul>
+                <li>Service usage logs: 3 months (Telecommunications Secrecy Protection Act)</li>
+                <li>Contract/payment records: 5 years (Consumer Protection in Electronic Commerce Act)</li>
+                <li>Dispute resolution records: 3 years (Consumer Protection in Electronic Commerce Act)</li>
+                <li>Advertising records: 6 months (Consumer Protection in Electronic Commerce Act)</li>
+                <li>Transaction ledgers/documents: 5 years (Framework Act on National Taxes)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 4: Third-Party Data Sharing</h2>
+            <ul>
+                <li>Data is shared only with user consent or when required by special legal provisions</li>
+                <li>Currently, no third-party sharing is conducted</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 5: Data Processing Contractors</h2>
+
+            <p><strong>Contractor Status:</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contractor</th>
+                        <th>Delegated Tasks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Amazon Web Services Inc.</td>
+                        <td>Cloud server operation and management</td>
+                    </tr>
+                    <tr>
+                        <td>Google LLC (Firebase)</td>
+                        <td>App usage analysis, push notification services</td>
+                    </tr>
+                    <tr>
+                        <td>Google LLC (Google Ads)</td>
+                        <td>Customized advertising and ad effectiveness measurement</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Retention and usage period: Same as Article 3</p>
+        </div>
+
+        <div class="section">
+            <h2>Article 6: Rights and Obligations of Users and Legal Representatives</h2>
+            <ul>
+                <li>Users may request access, correction, deletion, or suspension of processing of personal information at any time</li>
+                <li>Requests made in writing or by email will be processed without delay</li>
+                <li>Rights may be exercised through a legal representative or authorized agent (power of attorney required)</li>
+                <li>Legal restrictions may apply</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 7: Destruction of Personal Information</h2>
+            <ul>
+                <li>Personal information is destroyed without delay when the retention period expires or the processing purpose is achieved</li>
+                <li>If retention is required by law, data is transferred to a separate database</li>
+                <li><strong>Destruction method:</strong> Electronic files are destroyed using technical methods; paper documents are shredded or incinerated</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 8: Security Measures for Personal Information</h2>
+
+            <p><strong>Administrative Measures:</strong></p>
+            <ul>
+                <li>Establishment and implementation of internal management plan</li>
+                <li>Regular employee training</li>
+            </ul>
+
+            <p><strong>Technical Measures:</strong></p>
+            <ul>
+                <li>Technical countermeasures against hacking</li>
+                <li>Encryption of personal information and user-input content</li>
+                <li>Access rights management</li>
+                <li>Retention and tamper-prevention of access logs</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 9: Automatic Collection Devices</h2>
+            <p>The company does not use cookies for storing user information. However, advertising identifiers (IDFA) may be collected for advertising services, and users can restrict this through their device settings.</p>
+        </div>
+
+        <div class="section">
+            <h2>Article 10: Personal Information Protection Officer</h2>
+            <ul>
+                <li><strong>Name:</strong> Kim Areum</li>
+                <li><strong>Position:</strong> CEO</li>
+                <li><strong>Contact:</strong> mooda@analoglab.io</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Article 11: Changes to Privacy Policy</h2>
+            <p>This policy may be revised to reflect changes in laws or services, and any changes will be announced prior to the effective date.</p>
+        </div>
+
+        <div class="addendum">
+            <h2>Addendum (September 1, 2025)</h2>
+            <p>This Privacy Policy is effective as of January 20, 2026.</p>
+        </div>
+                    `
+                }
+            }
+        };
+
+        function getParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                page: params.get('page') || 'privacy',
+                lang: params.get('lang') || 'ko'
+            };
+        }
+
+        function render() {
+            const { page, lang } = getParams();
+            const pageData = pages[page]?.[lang] || pages.privacy.ko;
+
+            document.documentElement.lang = pageData.lang;
+            document.title = pageData.title;
+            document.getElementById('content').innerHTML = pageData.content;
+        }
+
+        render();
+    </script>
 </body>
 </html>
