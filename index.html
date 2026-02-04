@@ -163,49 +163,6 @@
         .modal-next {
             right: 20px;
         }
-        /* Custom popup styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-overlay.active {
-            display: flex;
-        }
-        .popup-box {
-            background: #1a1a1a;
-            border: 1px solid #FF9633;
-            border-radius: 16px;
-            padding: 32px 48px;
-            text-align: center;
-            max-width: 320px;
-        }
-        .popup-box p {
-            color: #FF9633;
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-        }
-        .popup-box button {
-            background: #FF9633;
-            color: #000;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        .popup-box button:hover {
-            background: #ffaa55;
-        }
         .homepage .download {
             display: flex;
             justify-content: center;
@@ -458,7 +415,7 @@
                         <span class="big">App Store</span>
                     </div>
                 </a>
-                <a href="#" onclick="document.getElementById('comingSoonPopup').classList.add('active'); return false;" class="store-button google">
+                <a href="https://play.google.com/store/apps/details?id=io.analoglab.mellog" target="_blank" class="store-button google">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
                     </svg>
@@ -473,14 +430,6 @@
         <footer class="copyright">
             &copy; 2025 Analoglab Inc. All rights reserved.
         </footer>
-    </div>
-
-    <!-- Coming Soon Popup -->
-    <div id="comingSoonPopup" class="popup-overlay">
-        <div class="popup-box">
-            <p>곧 출시 예정입니다</p>
-            <button onclick="document.getElementById('comingSoonPopup').classList.remove('active')">확인</button>
-        </div>
     </div>
 
     <!-- Image Modal -->
